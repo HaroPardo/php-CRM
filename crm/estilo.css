@@ -1,0 +1,67 @@
+body {
+    background-color: #f8f9fa;
+    padding-top: 20px;
+}
+
+.container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 25px;
+}
+
+h1 {
+    color: #0d6efd;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.card {
+    margin-top: 20px;
+}
+.banner {
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 30px;
+}
+
+.logo {
+    height: 50px;
+}
+
+.nav-buttons .btn {
+    margin-left: 10px;
+    font-weight: 500;
+}
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+.btn-group .btn {
+    margin: 0 2px;
+    border-radius: 4px;
+}
+
+.bi {
+    font-size: 1.1rem;
+}
+
+.table-light th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+}
