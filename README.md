@@ -1,68 +1,76 @@
 # CRM
 
-## 🎥 Demostración
+## 🎥 Demo
 
-Puedes ver una demostración del sistema funcionando aquí:  
+You can watch a live demo of the system in action here:  
 👉 [https://youtu.be/eneLbsGBK9Q](https://youtu.be/eneLbsGBK9Q)
 
 ---
 
-## 📋 Descripción general
+## 📋 Overview
 
-CRM es un sistema de **gestión de relaciones con clientes (Customer Relationship Management)** desarrollado en **PHP** con base de datos **MySQL**, pensado para ejecutarse en entorno local con **XAMPP**.  
+CRM is a **Customer Relationship Management** system built with **PHP** and a **MySQL** database, designed to run locally using **XAMPP**.  
 
-Permite a usuarios gestionar clientes, tareas, estadísticas y más desde una interfaz sencilla y funcional.
-
----
-
-## ✅ Funcionalidades principales
-
-- 🔐 Registro e inicio de sesión de usuarios
-- 👥 Gestión de clientes (crear, leer, actualizar y eliminar)
-- 🔎 Visualización de detalles completos por cliente
-- 📅 Calendario personalizado con:
-  - Reuniones
-  - Notas
-  - Tareas con prioridad y fechas
-- 📊 Módulo de estadísticas:
-  - Ingresos por período (mensual/anual)
-  - Análisis visual con gráficos (Chart.js)
-  - Media de ingresos y comparaciones
+It allows users to manage clients, tasks, statistics, and more through a simple, functional interface.
 
 ---
 
-## 🛠 Tecnologías utilizadas
+## ✅ Key Features
 
-- **PHP** – Backend y lógica de servidor  
-- **MySQL** – Almacenamiento de datos  
-- **Bootstrap 5** – Estilos responsivos y componentes UI  
-- **Chart.js** – Visualización gráfica de estadísticas  
-- **JavaScript (ES6)** – Interacciones dinámicas y manejo de eventos  
-- **HTML5 + CSS3** – Maquetación y estilos  
-- **XAMPP** – Servidor local (Apache + PHP + MySQL)
+- 🔐 User registration and login  
+- 👥 Client management (create, read, update, delete)  
+- 🔎 Full client detail views  
+- 📅 Custom calendar with:  
+  - Meetings  
+  - Notes  
+  - Tasks with priority and due dates  
+- 📊 Statistics module with:  
+  - Revenue by period (monthly/annual)  
+  - Visual analysis with charts (Chart.js)  
+  - Average revenue and comparisons  
 
 ---
 
-## ⚙️ Instalación (local con XAMPP)
+## 🛠 Technologies Used
 
-1. **Instala XAMPP:**  
-   Descárgalo desde [apachefriends.org](https://www.apachefriends.org/index.html) e instálalo.
+- **PHP** – Backend and server logic  
+- **MySQL** – Data storage  
+- **Bootstrap 5** – Responsive styles and UI components  
+- **Chart.js** – Graphical data visualization  
+- **JavaScript (ES6)** – Dynamic interactions and event handling  
+- **HTML5 + CSS3** – Markup and styling  
+- **XAMPP** – Local server (Apache + PHP + MySQL)  
 
-2. **Activa los servicios:**  
-   Desde el panel de XAMPP, inicia **Apache** y **MySQL**.
+---
 
-3. **Configura la base de datos:**  
-   - Accede a `http://localhost/phpmyadmin`
-   - Crea una base de datos llamada `crm`
-   - (Importa un script `.sql` si lo tienes)
+## ⚙️ Installation (Local with XAMPP)
 
-4. **Clona o copia el proyecto en:**  
+1. **Install XAMPP:**  
+   Download and install from [apachefriends.org](https://www.apachefriends.org/index.html).
+
+2. **Start Services:**  
+   From the XAMPP control panel, start **Apache** and **MySQL**.
+
+3. **Set Up the Database:**  
+   - Go to `http://localhost/phpmyadmin`  
+   - Create a database named `crm`  
+   - (Import a `.sql` script if you have one)
+
+4. **Deploy the Project:**  
+   Clone or copy this repository into:  
    `C:\xampp\htdocs\crm`
 
-5. **Edita la conexión:**  
-   En `includes/conexion.php` asegúrate de usar:
+5. **Configure the Connection:**  
+   In `includes/conexion.php`, ensure you have:
    ```php
+   <?php
    $host = 'localhost';
    $user = 'root';
-   $pass = ''; // sin contraseña por defecto
+   $pass = ''; // default empty password
    $db   = 'crm';
+   
+   $conexion = new mysqli($host, $user, $pass, $db);
+   if ($conexion->connect_error) {
+       die('Connection failed: ' . $conexion->connect_error);
+   }
+   ?>
